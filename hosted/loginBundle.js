@@ -22,8 +22,8 @@ var handleSignup = function handleSignup(e) {
 
     $("#domoMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-        handleError("RAWR! Username or password is empty");
+    if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == ''|| $("#disName").val() == '') {
+        handleError("RAWR! Username, Display Name or password is empty");
         return false;
     }
 

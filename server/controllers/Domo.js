@@ -3,13 +3,14 @@ const Domo = models.Domo;
 
 
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age) {
-    return res.status(400).json({ error: 'RAWR! Both name and age required' });
+  if (!req.body.name || !req.body.age || !req.body.level) {
+    return res.status(400).json({ error: 'RAWR! Both name, level and age required' });
   }
 
   const domoData = {
     name: req.body.name,
     age: req.body.age,
+    level: req.body.level,
     owner: req.session.account._id,
   };
 
@@ -52,6 +53,10 @@ const getDomos = (request, response) => {
 
     return res.json({ domos: docs });
   });
+};
+
+const clearDomos = () => {
+  Domo.DomoModel.length = 0; 
 };
 
 module.exports.makerPage = makerPage;

@@ -23,7 +23,7 @@ const handleSignup = (e) => {
 
     if($("#user").val() == '' || $("#pass").val() ==''|| $("#pass2").val() =='') {
         
-        handleError("RAWR! Username or password is empty");
+        handleError("RAWR! Username,Display Name or password is empty");
         return false;
         
     }
@@ -77,7 +77,6 @@ const SignupWindow = (props) => {
         <label htmlFor="pass2">Password: </label>
         <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
         <input type="hidden" name="_csrf" value={props.csrf}/>
-        
         <input className="formSubmit" type="submit" value="Sign up"/>
     </form>
         
