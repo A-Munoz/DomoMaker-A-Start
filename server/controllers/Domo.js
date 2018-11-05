@@ -56,9 +56,10 @@ const getDomos = (request, response) => {
 };
 
 const clearDomos = () => {
-  Domo.DomoModel.length = 0; 
+  Domo.DomoModel.length = 0;
 };
 
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
+module.exports.clearDomos = clearDomos;
